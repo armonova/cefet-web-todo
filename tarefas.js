@@ -50,10 +50,6 @@ tarefas.forEach(tarefa => {
 })
 
 addTaskButton.addEventListener('click', () => {
-    console.log(nameField);
-    console.log(categoryField);
-    console.log(filterField);
-
     newTask = new Tarefa(nameField.value, categoryField.value, false);
 
     tarefas.push(newTask);
