@@ -31,6 +31,11 @@ class Tarefa {
     }
 }
 
+addTaskButton = document.querySelector('#incluir-nova-tarefa');
+nameField = document.querySelector('#nova-tarefa-nome');
+categoryField = document.querySelector('#nova-tarefa-categoria');
+filterField = document.querySelector('#filtro-de-categoria');
+
 let tarefa1 = new Tarefa('Comprar leite', 'compras', false);
 let tarefa2 = new Tarefa('Escutar chimbinha', 'lazer', true);
 
@@ -43,3 +48,18 @@ listaTarefas.innerHTML = '';
 tarefas.forEach(tarefa => {
     tarefa.adicionaNaPagina(listaTarefas);
 })
+
+addTaskButton.addEventListener('click', () => {
+    console.log(nameField);
+    console.log(categoryField);
+    console.log(filterField);
+
+    newTask = new Tarefa(nameField.value, categoryField.value, false);
+
+    tarefas.push(newTask);
+
+    newTask.adicionaNaPagina(listaTarefas);
+
+    nameField.value = null;
+    nameField.focus();
+});
